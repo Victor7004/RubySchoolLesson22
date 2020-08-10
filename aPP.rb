@@ -10,6 +10,6 @@ get '/about' do
 	erb :about
 end
 
-get '/visit' do
+get '/vizit' do
 	erb :visit
 end
