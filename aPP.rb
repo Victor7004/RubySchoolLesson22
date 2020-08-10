@@ -11,5 +11,5 @@ get '/about' do
 end
 
 get '/vizit' do
-	erb :visit
+	erb :vizit
 end
