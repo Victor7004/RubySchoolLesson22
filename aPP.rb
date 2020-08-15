@@ -14,12 +14,13 @@ get '/visit' do
 	erb :visit
 end
 post '/visit' do
-    @username=params[:username]
+    @username = params[:username]
     @phone = params[:phone]
-    @datetime=params[:datetime]
+    @datetime = params[:datetime]
+    @barber = params[:barber]
 
     @title='Thank you'
-    @message="Dear #{@username}, we'll be waiting for you at #{@datetime}"
+    @message="Dear #{@username}, we'll be waiting for you at #{@datetime}.Barber: #{@barber}"
 
     f = File.open'users.txt','a'
     f.write "User:#{@username}, Phone:#{@phone}, Data and time:#{@datetime}"
