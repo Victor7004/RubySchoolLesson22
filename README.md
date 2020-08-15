@@ -1,2 +1,4 @@
-# Ruby School Lesson_22
-Lesson22
+RubySchool, Lesson 22
+====================
+
+Repository for Lesson 22
