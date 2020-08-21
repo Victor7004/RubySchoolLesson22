@@ -20,6 +20,12 @@ post '/visit' do
     @datetime = params[:datetime]
     @barber = params[:barber]
     @color = params[:color]
+
+    if @username == ''
+        @error = 'Введите имя'
+        return erb :visit
+    end
+    
     @title='Thank you'
     @message="Dear #{@username}, we'll be waiting for you at #{@datetime}.Barber: #{@barber}. Color:#{@color}."
 
