@@ -20,20 +20,21 @@ post '/visit' do
     @datetime = params[:datetime]
     @barber = params[:barber]
     @color = params[:color]
+    #создаем хеш
+    hh = {:username => 'Введите имя', :phone => 'Введите телефон',  :datetime => 'Введите дату и время'}
+    #делаем проверку для каждой пары ключ-значение
+    hh.each do |key, value|
+        #если параметр пуст
+        if params[key] == ''
+            #переменной error присваиваем значение value из хэша hh
+            #а value из хэша hh это сообщение об ошибке
+            #то есть переменной error присвоить сообщение об ошибке 
+            @error = hh[key]
 
-    if @username == ''
-        @error = 'Введите имя'
+            #вернуть представление визит
+            return erb :visit
+        end
     end
-    if @phone == ''
-        @error = 'Введите номер телефона'
-    end
-    if @datetime == ''
-        @error = 'Введите дату и время'
-    end
-    if @error != ''
-        return erb :visit
-    end
-
     @title='Thank you'
     @message="Dear #{@username}, we'll be waiting for you at #{@datetime}.Barber: #{@barber}. Color:#{@color}."
 
