@@ -25,7 +25,11 @@ post '/visit' do
         @error = 'Введите имя'
         return erb :visit
     end
-    
+    if @phone == ''
+        @error = 'Введите номер телефона'
+        return erb :visit
+    end
+
     @title='Thank you'
     @message="Dear #{@username}, we'll be waiting for you at #{@datetime}.Barber: #{@barber}. Color:#{@color}."
 
