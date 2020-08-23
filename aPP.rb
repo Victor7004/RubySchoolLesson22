@@ -46,6 +46,14 @@ post '/contacts' do
     @email = params[:email]
     @massage=params[:massage]
 
+    hh = {:email => 'Ваш email',  :massage => 'Введите ваше сообщение'}
+    #делаем проверку для каждой пары ключ-значение
+    @error = hh.select {|key,_| params[key] == ""}.values.join(", ")
+        if @error != ''
+            #вернуть представление визит
+            return erb :contacts
+        end
+
     @title='Thank you'
     @massage= "#{@massage}"
 
