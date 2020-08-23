@@ -43,6 +43,29 @@ get '/contacts' do
 	erb :contacts
 end
 post '/contacts' do
+#попытка подключить почту через подключение библиотеки require 'pony' пока не удалась - ошибка в 54 строке
+#require 'pony'
+#Pony.mail(
+  #:name => params[:name],
+  #:mail => params[:mail],
+  #:body => params[:body],
+  #:to => 'victoraleksejcuk@gmail.com',
+  #:subject => params[:name] + " has contacted you",
+  #:body => params[:message],
+  #:port => '587',
+  #:via => :smtp,
+  #:via_options => { 
+    #:address              => 'smtp.gmail.com', 
+    #:port                 => '587', 
+    #:enable_starttls_auto => true, 
+    #:user_name            => 'Виктор Алексейчук', 
+    #:password             => 'p@55w0rd', 
+    #:authentication       => :plain, 
+    #:domain               => 'localhost.localdomain'
+  #})
+#redirect '/success' 
+
+
     @email = params[:email]
     @massage=params[:massage]
 
@@ -60,7 +83,7 @@ post '/contacts' do
     f = File.open'contacts.txt','a'
     f.write " Email:#{@email}, Сообщение:#{@massage}"
     f.close 
-
+    
     
 
     erb :massage 
