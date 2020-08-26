@@ -25,7 +25,7 @@ post '/visit' do
     #делаем проверку для каждой пары ключ-значение
     @error = hh.select {|key,_| params[key] == ""}.values.join(", ")
         if @error != ''
-            #вернуть представление визит
+            #вернуть представление "визит"
             return erb :visit
         end
     
