@@ -22,9 +22,9 @@
   <div class="form-group">
     <label>Наши парикмахеры:</label>
     <select name="barber" class="form-control ccc">
-      <option>Иванов</option>
-      <option>Петров</option>
-      <option <%= 'selected' %>>Сидоров</option>
+      <option <%= @barber == 'Иванов' ? 'selected' : '' %>>Иванов</option>
+      <option <%= @barber == 'Петров' ? 'selected' : '' %>>Петров</option>
+      <option <%= @barber == 'Сидоров' ? 'selected' : '' %>>Сидоров</option>
     </select>
   </div>
 
