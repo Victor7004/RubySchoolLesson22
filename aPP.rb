@@ -1,7 +1,21 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+#require 'sqlite3'
 
+#   configure do
+#    @db = SQLite3::Databaze.new 'barbershop.db'
+#    @db.execute'CREATE TABLE IF NOT EXISTS
+#        "Users"
+#      (
+#        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+#        "username" TEXT,
+#        "phone"    TEXT,
+#        "datastamp" TEXT,
+#        "barber"   TEXT,
+#        "color"    TEXT
+#       )'
+#    end
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
 end
@@ -70,7 +84,7 @@ post '/contacts' do
     @massage=params[:massage]
 
     hh = {:email => 'Ваш email',  :massage => 'Введите ваше сообщение'}
-    #делаем проверку для каждой пары ключ-значение
+    #делаем проверку для каждой пары , ключ-значение
     @error = hh.select {|key,_| params[key] == ""}.values.join(", ")
         if @error != ''
             #вернуть представление визит
