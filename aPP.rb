@@ -42,17 +42,17 @@ post '/visit' do
             #вернуть представление "визит"
             return erb :visit
         end
-    db = get_db
-    db.execute 'insert into
-        Users
-           (
-               username,
-               phone,
-               datastamp,
-               barber,
-               color
-            )
-        values(?,?,?,?,?)',[@username, @phone, @datetime, @barber, @color]
+    #db = get_db
+    #db.execute 'insert into
+        #Users
+           #(
+               #username,
+               #phone,
+               #datastamp,
+               #barber,
+               #color
+            #)
+        #values(?,?,?,?,?)',[@username, @phone, @datetime, @barber, @color]
 
     @title='Thank you'
     @message="Dear #{@username}, we'll be waiting for you at #{@datetime}.Barber: #{@barber}. Color:#{@color}."
@@ -63,9 +63,9 @@ post '/visit' do
 
     erb :message 
 end 
-def get_db
-    return SQLite3::Databaze.new 'barbershop.db'
-end
+#def get_db
+    #return SQLite3::Databaze.new 'barbershop.db'
+#end
 get '/contacts' do
 	erb :contacts
 end
