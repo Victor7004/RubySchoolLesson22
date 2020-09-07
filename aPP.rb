@@ -1,20 +1,21 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
-require 'sqlite3'
-configure do
-    @db = SQLite3::Databaze.new 'barbershop.db'
-   @db.execute'CREATE TABLE IF NOT EXISTS
-        "Users"
-      (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-        "username" TEXT,
-        "phone"    TEXT,
-        "datastamp" TEXT,
-        "barber"   TEXT,
-        "color"    TEXT
-       )'
-end
+#require 'sqlite3'
+
+#configure do
+    #db = get_db
+    #db.execute'CREATE TABLE IF NOT EXISTS
+        #"Users"
+      #(
+        #"id" INTEGER PRIMARY KEY AUTOINCREMENT,
+        #"username" TEXT,
+        #"phone"    TEXT,
+        #"datastamp" TEXT,
+        #"barber"   TEXT,
+        #"color"    TEXT
+       #)'
+#end
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
 end
@@ -41,7 +42,18 @@ post '/visit' do
             #вернуть представление "визит"
             return erb :visit
         end
-    
+    db = get_db
+    db.execute 'insert into
+        Users
+           (
+               username,
+               phone,
+               datastamp,
+               barber,
+               color
+            )
+        values(?,?,?,?,?)',[@username, @phone, @datetime, @barber, @color]
+
     @title='Thank you'
     @message="Dear #{@username}, we'll be waiting for you at #{@datetime}.Barber: #{@barber}. Color:#{@color}."
 
@@ -51,7 +63,9 @@ post '/visit' do
 
     erb :message 
 end 
-
+def get_db
+    return SQLite3::Databaze.new 'barbershop.db'
+end
 get '/contacts' do
 	erb :contacts
 end
