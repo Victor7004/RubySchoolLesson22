@@ -64,7 +64,9 @@ post '/visit' do
     erb :message 
 end 
 #def get_db
-    #return SQLite3::Databaze.new 'barbershop.db'
+    #db = SQLite3::Databaze.new 'barbershop.db'
+    #db.results_as_hash = true
+    # return db
 #end
 get '/contacts' do
 	erb :contacts
