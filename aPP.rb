@@ -2,6 +2,11 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 #require 'sqlite3'
+#def get_db
+    #db = SQLite3::Databaze.new 'barbershop.db'
+    #db.results_as_hash = true
+    # return db
+#end
 
 #configure do
     #db = get_db
