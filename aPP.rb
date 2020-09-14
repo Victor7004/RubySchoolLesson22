@@ -2,6 +2,10 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 #require 'sqlite3'
+
+#def is_barber_exists? db, name
+    #db.execute('select * from Barbers where name=?', [name]).length
+#end
 #def get_db
     #db = SQLite3::Databaze.new 'barbershop.db'
     #db.results_as_hash = true
