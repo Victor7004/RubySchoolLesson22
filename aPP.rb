@@ -4,7 +4,13 @@ require 'sinatra/reloader'
 #require 'sqlite3'
 
 #def is_barber_exists? db, name
-    #db.execute('select * from Barbers where name=?', [name]).length
+    #db.execute('select * from Barbers where name=?', [name]).length > 0
+#end
+#def seed_db db, barbers
+    #barbers.each do |barber|
+        #if !is_barber_exists? db, barber
+            #db.execute 'insert into Barbers (name) values (?)', [barber]
+        #end    
 #end
 #def get_db
     #db = SQLite3::Databaze.new 'barbershop.db'
@@ -30,6 +36,7 @@ require 'sinatra/reloader'
         #"id" INTEGER PRIMARY KEY AUTOINCREMENT,
         #"name" TEXT,
        #)
+       #seed_db db, ['Иванов', 'Путров', 'Сидоров']
 #end
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
