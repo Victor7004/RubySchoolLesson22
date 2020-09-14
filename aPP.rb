@@ -20,6 +20,12 @@ require 'sinatra/reloader'
         #"barber"   TEXT,
         #"color"    TEXT
        #)'
+    #db.execute'CREATE TABLE IF NOT EXISTS
+        #"Barbers"
+      #(
+        #"id" INTEGER PRIMARY KEY AUTOINCREMENT,
+        #"name" TEXT,
+       #)
 #end
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
