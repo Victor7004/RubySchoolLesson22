@@ -18,11 +18,11 @@ require 'sinatra/reloader'
     # return db
 #end
 
-before do
-  db = get_db
-  @barbers = db.execute 'select * from Barbers'
+#before do
+  #db = get_db
+  #@barbers = db.execute 'select * from Barbers'
 
-end
+#end
 
 #configure do
     #db = get_db
