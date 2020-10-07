@@ -3,6 +3,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 #require 'sqlite3'
 
+
 #def is_barber_exists? db, name
     #db.execute('select * from Barbers where name=?', [name]).length > 0
 #end
