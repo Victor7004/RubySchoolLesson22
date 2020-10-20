@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
-require 'sqlite3'
+#require 'sqlite3'
 
 
 #def is_barber_exists? db, name
