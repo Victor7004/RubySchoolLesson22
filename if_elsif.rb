@@ -1,3 +1,4 @@
+# пример проги на ветвление
 num = 8
 if num == 3
   puts "Number is 3"
