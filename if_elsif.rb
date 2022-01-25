@@ -1,4 +1,4 @@
-# пример проги на ветвление
+# пример проги на ветвление с if , elsif и else
 num = 8
 if num == 3
   puts "Number is 3"
