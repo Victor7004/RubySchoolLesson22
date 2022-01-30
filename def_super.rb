@@ -14,6 +14,7 @@ class Cat < Animal
     puts "Meow"
   end
 end
+
 # super вызывает метод speak класса Animal.
 # Теперь, если мы создадим объект класса Cat и вызовем его метод speak, то получим следующее:
 
